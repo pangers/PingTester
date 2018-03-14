@@ -12,6 +12,7 @@
 		2A7763AC2058A5D100A8566A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A7763AA2058A5D100A8566A /* Main.storyboard */; };
 		2A7763AE2058A5D100A8566A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7763AD2058A5D100A8566A /* Assets.xcassets */; };
 		2A7763B12058A5D100A8566A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A7763AF2058A5D100A8566A /* LaunchScreen.storyboard */; };
+		88C44D7FED921A0174810047 /* Pods_PingTester.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A0571BC6D6ECB422ECD1F9 /* Pods_PingTester.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		2A7763AD2058A5D100A8566A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A7763B02058A5D100A8566A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A7763B22058A5D100A8566A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49CF9ED9C744F1E1AEB47AEA /* Pods-PingTester.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PingTester.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PingTester/Pods-PingTester.debug.xcconfig"; sourceTree = "<group>"; };
+		663455209725EE5F652A519F /* Pods-PingTester.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PingTester.release.xcconfig"; path = "Pods/Target Support Files/Pods-PingTester/Pods-PingTester.release.xcconfig"; sourceTree = "<group>"; };
+		D7A0571BC6D6ECB422ECD1F9 /* Pods_PingTester.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PingTester.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88C44D7FED921A0174810047 /* Pods_PingTester.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12216BBB870DA46DE4F9E379 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49CF9ED9C744F1E1AEB47AEA /* Pods-PingTester.debug.xcconfig */,
+				663455209725EE5F652A519F /* Pods-PingTester.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		2A77639A2058A5D000A8566A = {
 			isa = PBXGroup;
 			children = (
 				2A7763A52058A5D100A8566A /* PingTester */,
 				2A7763A42058A5D100A8566A /* Products */,
+				12216BBB870DA46DE4F9E379 /* Pods */,
+				DCA7ED5ACEFBC7CBF09F5CEA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = PingTester;
 			sourceTree = "<group>";
 		};
+		DCA7ED5ACEFBC7CBF09F5CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7A0571BC6D6ECB422ECD1F9 /* Pods_PingTester.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A7763B52058A5D100A8566A /* Build configuration list for PBXNativeTarget "PingTester" */;
 			buildPhases = (
+				0B4C2C1670A4036D2DBA25B5 /* [CP] Check Pods Manifest.lock */,
 				2A77639F2058A5D100A8566A /* Sources */,
 				2A7763A02058A5D100A8566A /* Frameworks */,
 				2A7763A12058A5D100A8566A /* Resources */,
+				C6BFD1E16C5A7BCA064255F6 /* [CP] Embed Pods Frameworks */,
+				4870AC2D7F3C2293279C4A9B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B4C2C1670A4036D2DBA25B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PingTester-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4870AC2D7F3C2293279C4A9B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PingTester/Pods-PingTester-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6BFD1E16C5A7BCA064255F6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PingTester/Pods-PingTester-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PlainPing/PlainPing.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PlainPing.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PingTester/Pods-PingTester-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2A77639F2058A5D100A8566A /* Sources */ = {
@@ -272,9 +353,11 @@
 		};
 		2A7763B62058A5D100A8566A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49CF9ED9C744F1E1AEB47AEA /* Pods-PingTester.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3W2L7QF9AH;
 				INFOPLIST_FILE = PingTester/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pangers.PingTester;
@@ -286,9 +369,11 @@
 		};
 		2A7763B72058A5D100A8566A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 663455209725EE5F652A519F /* Pods-PingTester.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3W2L7QF9AH;
 				INFOPLIST_FILE = PingTester/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pangers.PingTester;
